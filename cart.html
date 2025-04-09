@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .cart-container {
+      margin: 20px;
+    }
+
+    .cart-item {
+      margin-bottom: 20px;
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      margin-top: 10px;
+    }
+
+    .color-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .cta-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      opacity: 0.8;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .product {
+      border: 1px solid black;
+      width: 50%;
+    }
+
+    .product-title {
+      text-align: center;
+    }
+
+    .size-selector {
+      margin-top: 10px;
+    }
+
+    .size-selector div {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .size {
+      border: 1px solid black;
+      transition: all 0.3s ease;
+      background-color: white;
+    }
+
+    .size:hover {
+      background-color: lightgray;
+    }
+
+    .add-cart {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .color-blue {
+      background-color: blue;
+    }
+
+    .color-yellow {
+      background-color: yellow;
+    }
+
+    .color-green {
+      background-color: green;
+    }
+
+    .color-brown {
+      background-color: brown;
+    }
+
+    .color-black {
+      background-color: black;
+    }
+
+    .color-red {
+      background-color: red;
+    }
+
+    .color-selector {
+      margin-top: 10px;
+    }
+
+    .color-selector div {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .color {
+      border: 1px solid black;
+      transition: all 0.3s ease;
+      background-color: white;
+    }
+
+    .color:hover {
+      background-color: lightgray;
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      margin-top: 10px;
+    }
+
+    .color-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-container {
+      margin: 20px;
+    }
+
+    .cart-item {
+      margin-bottom: 20px;
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      margin-top: 10px;
+    }
+
+    .color-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+  
+
+
+  </style>
+</head>
+
+<body>
+  <div class="cart-container">
+    <h1>Your Cart</h1>
+    <div class="cart-item">
+      <h3>Selected Color:</h3>
+      <div id="color-box" class="color-box"></div>
+    </div>
+    <div class="cart-item">
+      <h3>Price:</h3>
+      <p id="price"></p>
+    </div>
+    <div class="cart-item">
+      <h3>Selected Size:</h3>
+      <p id="size"></p>
+    </div>
+  </div>
+  <div>
+    <a href="index.html">Return to Home</a>
+  </div>
+
+  <script>
+    const selectedColor = localStorage.getItem('selectedColor');
+    const selectedSize = localStorage.getItem('selectedSize');
+    const price = localStorage.getItem('price');
+
+    const colorBox = document.getElementById('color-box');
+    colorBox.innerHTML = '';
+
+    if (selectedColor === 'blue') { colorBox.innerHTML = '<img src="./blueshirt.png" alt="Blue Shirt">'; }
+   
+    else if (selectedColor === 'yellow') { colorBox.innerHTML = '<img src="./yellowshirt.jpg" alt="Yellow Shirt">'; }
+    else if (selectedColor === 'green') { colorBox.innerHTML = '<img src="./greenshirt.jpg" alt="Green Shirt">'; }
+    else if (selectedColor === 'brown') { colorBox.innerHTML = '<img src="./brownshirt.jpg" alt="Brown Shirt">'; }
+    else if(selectedColor === 'black') { colorBox.innerHTML = '<img src="./blackshirt.jpg" alt="Black Shirt">'; }
+    document.getElementById('price').textContent = price;
+    document.getElementById('size').textContent = selectedSize;
+  </script>
+</body>
+
+</html>

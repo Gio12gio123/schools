@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>What3Words - Simplifying Locations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-list li {
+    margin-right: 20px;
+  }
+
+  .cta-button {
+    background-color: orange;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .cta-button:hover {
+    opacity: 0.8;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(228, 15, 15);
+    margin: 3px 0;
+  }
+
+  .banner-content {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .how-it-works-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .step {
+    width: 30%;
+  }
+
+  footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logoo {
+    display: flex;
+    align-items: center;
+  }
+
+  .a {
+    text-decoration: none;
+    color: rgb(173, 10, 10);
+    gap: 10px;
+  }
+
+  .a:hover {
+    color: #301e22;
+  }
+
+  @media (max-width: 768px) {
+    .nav-list {
+      display: none;
+    } 
+    .nav-list {
+      display: none;
+    }
+
+    .hamburger {
+
+
+      display: flex;
+    }
+
+    .nav-list {
+      display: none;
+    }
+
+    
+  }
+
+  
+
+</style>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="space-between">
+      <div class="logoo"><img src="/OIP.jpg" alt="" height="50px" width="50px"></div>
+      <div class="logo">
+       <a href="https://what3words.com/pricing.axed.showed" class="a"><h1>What3Words</h1></a> 
+      </div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="About.html">About </a></li>
+          <li><a href="#how-it-works"> Works</a></li>
+          <li><a href="merch.html"> Merch</a></li>
+         <li><a href="contact.html">Contact</a></li>
+         <li><a href="difference.html">Dif</a></li>
+          <li><a href="geo.html">Geo</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <div class="banner-content">
+        <h2>Simplifying Locations. Connecting the World with 3 Simple Words.</h2>
+        <a href="#" class="cta-button">Find Your 3 Words</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="how-it-works-content">
+        <div class="step">
+          <h3>1. Choose Your Location</h3>
+          <p>Simply select a place on the map, and you'll be given a set of three words that point to the exact spot.
+          </p>
+        </div>
+        <div class="step">
+          <h3>2. Easy to Share</h3>
+          <p>Share the three-word address to easily guide someone to a specific location, even if it's hard to find on a
+            traditional map.</p>
+        </div>
+        <div class="step">
+          <h3>3. Always Accurate</h3>
+          <p>No more confusion with traditional address systems. Each location is uniquely identifiable and easy to use
+            anywhere in the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases">
+    <div class="container">
+      <h2>Use Cases</h2>
+      <p>What3Words can be used for various applications, from navigation and delivery to logistics and events. It
+        simplifies location sharing worldwide.</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <div class="container">
+      <p>&copy; 2025 What3Words. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

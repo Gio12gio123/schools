@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .color {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .color-blue {
+      background-color: blue;
+    }
+
+    .color-red {
+      background-color: red;
+    }
+
+    .color-yellow {
+      background-color: yellow;
+    }
+
+    .color-green {
+      background-color: green;
+    }
+
+    .color-brown {
+      background-color: brown;
+    }
+
+    .size-selector {
+      margin-top: 10px;
+    }
+
+    .size-selector div {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .size {
+      border: 1px solid black;
+      transition: all 0.3s ease;
+      background-color: white;
+    }
+
+    .size:hover {
+      background-color: lightgray;
+    }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+    .add-cart {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+  }
+
+    .product {
+      
+      border: 1px solid black;
+      width: 50%;
+    }
+
+    .product-title {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .product-img {
+      margin-right: 20px;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .product-description {
+      margin-top: 10px;
+    }
+
+    .product-colors {
+      margin-top: 10px;
+    }
+
+    .product-details {
+      margin-top: 10px;
+    }
+
+    .details-list {
+      list-style-type: none;
+    }
+
+    .details-title {
+      margin-top: 10px;
+    }
+
+    .sale {
+      background-color: red;
+      color: white;
+      padding: 5px;
+      width: 50px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="product">
+    <h2 class="product-title">What3Words</h2>
+    <div class="container">
+      <img id="product-image" src="/blackshirt.jpg" alt="what3words"
+        height="250" width="250" class="product-img" />
+      <div class="product-info">
+        <div class="product-price">
+          <p class="price"><strong><del>$65</del></strong> $50</p>
+          <p class="shipping">Free shipping</p>
+        </div>
+        <p class="sale">Sale</p>
+        <p class="product-description">Ready to dress up or down, these classic canvas Chucks are an everyday wardrobe
+          staple.</p>
+
+        <div class="product-colors">
+          <div class="color color-blue" data-color="blue"></div>
+          <div class="color color-yellow" data-color="yellow"></div>
+          <div class="color color-green" data-color="green"></div>
+          <div class="color color-brown" data-color="brown"></div>
+          <div  class="color color-black" data-color="black"></div>
+        </div>
+
+        <div class="size-selector">
+          <div class="size size-sv" data-size="S">S</div>
+          <div class="size size-m" data-size="M">M</div>
+          <div class="size size-l" data-size="L">L</div>
+          <div class="size size-xl" data-size="XL">XL</div>
+        </div>
+      </div>
+
+      <div class="product-details">
+        <h3 class="details-title">Product details</h3>
+        <ul class="details-list">
+          <li>Lightweight, durable canvas sneaker</li>
+          <li>Lightly padded footbed for added comfort</li>
+          <li>Iconic Chuck Taylor ankle patch.</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="add-cart">
+      <a href="cart.html" onclick="saveToCart()">Add to cart</a>
+    </button>
+  </article>
+
+  <script>
+    let selectedColor = '';
+    let selectedSize = '';
+
+    const colorDivs = document.querySelectorAll('.color');
+    const productImage = document.getElementById('product-image');
+    const sizeDivs = document.querySelectorAll('.size-selector div');
+
+    colorDivs.forEach(colorDiv => {
+      colorDiv.addEventListener('click', function () {
+        selectedColor = colorDiv.getAttribute('data-color');
+        if (selectedColor === 'blue') { productImage.src = './blueshirt.png'; }
+        else if (selectedColor === 'yellow') { productImage.src = './yellowshirt.jpg'; }
+        else if (selectedColor === 'green') { productImage.src = './greenshirt.jpg'; }
+        else if (selectedColor === 'brown') { productImage.src = './brownshirt.jpg'; }
+        else if (selectedColor === 'black') { productImage.src = './blackshirt.jpg'; }
+      });
+    });
+
+    sizeDivs.forEach(sizeDiv => {
+      sizeDiv.addEventListener('click', function () {
+        selectedSize = sizeDiv.getAttribute('data-size');
+      });
+    });
+
+    function saveToCart() {
+      const price = "$50.00";
+      localStorage.setItem('selectedColor', selectedColor);
+      localStorage.setItem('selectedSize', selectedSize);
+      localStorage.setItem('price', price);
+    }
+  </script>
+</body>
+
+</html>
