@@ -152,3 +152,71 @@ footer {
 footer p {
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+
+  /* Header: Adjust for mobile */
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Navigation: Hide on mobile (Hamburger menu already included in your earlier CSS) */
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+  }
+
+  .nav-list.active {
+    display: block;
+  }
+
+  /* Contact Section: Adjust text size for mobile */
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  #contact p {
+    font-size: 1rem;
+  }
+
+  /* Contact Form: Make the form responsive */
+  .contact-form {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-form label {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  /* Adjust CTA Button for mobile */
+  .cta-button {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+  }
+}

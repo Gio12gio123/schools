@@ -131,3 +131,31 @@ footer {
 footer p {
   font-size: 1rem;
 }
+
+/* mobile version */
+
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-item {
+    width: 80%;
+  }
+}
+
