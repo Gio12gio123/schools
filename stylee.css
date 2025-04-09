@@ -220,3 +220,71 @@ footer p {
     font-size: 1.1rem;
   }
 }
+
+/* Additional responsiveness for very small screens */
+@media (max-width: 480px) {
+
+  /* Header: Adjust font sizes and spacing */
+  header .logo h1 {
+    font-size: 2rem;
+  }
+
+  .nav-list li a {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+
+  /* Contact Section: Adjust text size and spacing */
+  #contact h2 {
+    font-size: 1.8rem;
+  }
+
+  #contact p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .contact-form label {
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+
+  /* CTA Button: Adjust size for smaller screens */
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+
+  /* Footer: Adjust text size */
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Improve layout for medium screens */
+@media (max-width: 1024px) {
+
+  /* Header: Adjust spacing */
+  header .container {
+    padding: 0 10px;
+  }
+
+  /* Contact Section: Adjust form width */
+  .contact-form {
+    max-width: 500px;
+  }
+
+  /* Footer: Adjust padding */
+  footer {
+    padding: 15px 0;
+  }
+}

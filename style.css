@@ -213,24 +213,24 @@ footer p {
   font-size: 1rem;
 }
 
-.a{
+.a {
   text-decoration: none;
-  color:rgb(161, 38, 38)
+  color: rgb(161, 38, 38)
 }
 
-.logoo{
+.logoo {
   margin-left: -100px;
-  display:inline-block;
+  display: inline-block;
 }
 
-.logo{
- display: flex;
- gap: 10px;
+.logo {
+  display: flex;
+  gap: 10px;
 
- 
+
 }
 
-/* Mobile Version - Hamburger Menu Toggle */
+/* Mobile Version - Enhanced Hamburger Menu */
 @media (max-width: 768px) {
   nav {
     display: none;
@@ -238,6 +238,33 @@ footer p {
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 10px;
+  }
+
+  .hamburger .bar {
+    width: 30px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   .nav-list {
@@ -247,29 +274,50 @@ footer p {
     width: 100%;
     background-color: #333;
     display: none;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-top: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .nav-list.active {
+    display: flex;
   }
 
   .nav-list li {
     margin: 10px 0;
   }
 
-  .nav-list.active {
-    display: block;
-  }
-
   .nav-list li a {
     display: block;
     padding: 15px 20px;
     font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
 
-  /* Adding the hamburger functionality */
-  .hamburger.active+.nav-list {
-    display: block;
+  .nav-list li a:hover {
+    color: #f39c12;
   }
 }
 
+/* Additional Responsiveness for Smaller Screens */
+@media (max-width: 480px) {
+  .nav-list li a {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  .hamburger .bar {
+    width: 25px;
+    height: 2.5px;
+  }
+
+  .nav-list {
+    padding: 15px 0;
+  }
+}
